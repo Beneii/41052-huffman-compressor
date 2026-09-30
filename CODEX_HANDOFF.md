@@ -1,11 +1,11 @@
 # Laptop handoff — 41052 PA1
 
-Latest submission preparation: REPORT.md and REPORT.pdf now use a concise, balanced AI disclosure while retaining the substantial initial implementation, test and report drafting assistance. Repetitive draft warnings have been removed. The final narrated video was published as unlisted: https://youtu.be/tCK9hSSQ6ZI . README links it and the GitHub release. It uses edited screen footage with separately recorded narration and captions; it is not a simultaneous single-take recording. The repository is still private, so marker access needs resolving. No assignment submission has been made. Do not invent student coding contributions or replace the final video with the older silent footage.
+Latest submission preparation: REPORT.md and REPORT.pdf now use a concise, balanced AI disclosure while retaining the substantial initial implementation, test and report drafting assistance. Repetitive draft warnings have been removed. The final narrated video was published as unlisted: https://youtu.be/tCK9hSSQ6ZI . README links it and the GitHub release. It uses edited screen footage with separately recorded narration and captions; it is not a simultaneous single-take recording. The repository is public. Ed submission #1 is FINAL, saved 30 September 2026 at 11:48:50 PM Sydney time. Receipt: https://edstem.org/au/courses/37005/lessons/117549/attempts?slide=817595 Do not invent student coding contributions or replace the final video with the older silent footage.
 
 ## Immediate objective
-Benjamin will record the screen himself on his laptop, using his own voice and normal cursor. Help him run and explain the project in VS Code. Do not start mouse/keyboard automation or recording scripts unless he explicitly asks again. Desktop automation was stopped and verified to have no running processes.
+The narrated video and assignment submission are complete. For any subsequent review, help Benjamin run and explain the project in VS Code. Do not start mouse/keyboard automation or recording scripts unless he explicitly asks again. Desktop automation was stopped and verified to have no running processes.
 
-Repository: https://github.com/Beneii/41052-huffman-compressor (private). Clone or pull `main`. Python 3.11+; compressor and tests use only the standard library. Run `python demo.py` and `python -m unittest -v` from the repository root. `demo.py` generates `demo-output`, which is deliberately ignored by Git.
+Repository: https://github.com/Beneii/41052-huffman-compressor (public). Clone or pull `main`. Python 3.11+; compressor and tests use only the standard library. Run `python demo.py` and `python -m unittest -v` from the repository root. `demo.py` generates `demo-output`, which is deliberately ignored by Git.
 
 ## Recording support
 Run `python video/serve.py`, then open http://localhost:8767/read-along.html for the standalone teleprompter. It has no screen capture, microphone access, or computer control. Start/pause the timer and advance sections manually while recording VS Code with your own recorder. Text is editable per section. Keep it off the recorded screen if possible.
@@ -49,3 +49,4 @@ Code, nine passing tests, eight verified benchmark cases, README, REPORT.md, fiv
 Codex generated most code, tests, and report draft. The report does not fabricate personal reflection; Benjamin must review its claims and endorse or replace the reflection with his own understanding. His own narrated video is still outstanding. Do not invent personal experiences or claim he independently authored the implementation. Preserve truthful AI disclosure.
 
 Suggested next prompt: "Read CODEX_HANDOFF.md. Help me run the demo in VS Code and record my own 3–5 minute explanation. Keep computer automation off."
+
