@@ -1,6 +1,6 @@
 # Submission status
 
-Code, tests, results and revised report are prepared. Benjamin's own video is rendering; its final accessible link has not been supplied. The repository was confirmed private on 30 September 2026. Video link, report review and marker access remain. No submission has been made.
+Code, tests, results, revised report and narrated video are prepared. The final video is published as unlisted on YouTube: https://youtu.be/tCK9hSSQ6ZI . The repository was confirmed private on 30 September 2026. Report review and marker access remain. No assignment submission has been made.
 
 Repository: https://github.com/Beneii/41052-huffman-compressor
 This is private. Grant the marker access or explicitly choose to make it public before submitting its URL.
@@ -21,7 +21,7 @@ https://edstem.org/au/courses/37005/discussion/3608605
 ## Finish
 
 1. Review REPORT.pdf, especially the findings and AI-use statement. The disclosure describes substantial AI implementation/test/report drafting assistance and Benjamin's project direction and video preparation; it does not invent personal coding contributions.
-2. Finish rendering the student-recorded 3-5 minute walkthrough. Upload it and replace the README's pending-video line with its accessible link, or commit the final video file and link it there. Confirm it plays with sound and shows the live code/demo.
+2. Review the approximately 3 minute 20 second narrated walkthrough at https://youtu.be/tCK9hSSQ6ZI . It is linked in README and published as unlisted. YouTube's upload checks were still in progress at publication; verify playback before submission. The MP4 and captions are also available in the narrated-walkthrough-2026-09-30 GitHub release.
 3. Publish/share the repository with the marker, including the report and results. GitHub is preferred, not mandatory; ensure the marker has access.
 4. Open the Ed submission lesson and enter the repository URL in the Project Repository Link editor. Use Submit only once the report, video and marker access are ready. Verify the submission confirmation.
 

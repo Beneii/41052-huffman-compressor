@@ -8,7 +8,8 @@ A working binary file compressor using canonical Huffman coding. Written in Pyth
 
 - Report: [REPORT.pdf](REPORT.pdf) ([Markdown source](REPORT.md)).
 - Implementation: [huff.py](huff.py); tests and measured results are included below.
-- Student-recorded walkthrough: final video is rendering; its accessible link must be added here before submission.
+- Narrated walkthrough: [Watch on YouTube (unlisted, approximately 3 minutes 20 seconds)](https://youtu.be/tCK9hSSQ6ZI).
+- Video download and captions: [GitHub release](https://github.com/Beneii/41052-huffman-compressor/releases/tag/narrated-walkthrough-2026-09-30). The walkthrough uses edited screen footage with separately recorded narration and captions.
 
 ## Quick start
 
