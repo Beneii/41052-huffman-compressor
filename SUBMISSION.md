@@ -13,7 +13,7 @@ https://edstem.org/au/courses/37005/discussion/3603319
 Submission lesson:
 https://edstem.org/au/courses/37005/lessons/117549/slides/817595
 
-The unopened attempt screen offers Start and says unlimited attempts. Exact form fields have not yet been verified. No submission has been made.
+The attempt has been opened to inspect its requirements. It contains a single Project Repository Link challenge, with the instruction "Submit your project repository link here" and an editor. No Submit or Save & Mark Complete action has been taken. The initial screen says unlimited attempts.
 
 Staff answer says to include the report in the repository:
 https://edstem.org/au/courses/37005/discussion/3608605
@@ -21,9 +21,9 @@ https://edstem.org/au/courses/37005/discussion/3608605
 ## Finish
 
 1. Run `python demo.py`, understand the code points in VIDEO_GUIDE.md, and review the personal reflection and AI-use section in REPORT.md.
-2. Record your own 3-5 minute code walkthrough. Keep the video file or an unlisted accessible link.
+2. Record your own 3-5 minute code walkthrough. Put the video file or an accessible unlisted video link in the repository/README so it accompanies the repository submission.
 3. Publish/share the repository with the marker, including the report and results. GitHub is preferred, not mandatory; ensure the marker has access.
-4. Open the Ed submission lesson and supply the requested repository/video links. Verify the submission confirmation.
+4. Open the Ed submission lesson and enter the repository URL in the Project Repository Link editor. Use Submit only once the report, video and marker access are ready. Verify the submission confirmation.
 
 ## Assignment sources
 
