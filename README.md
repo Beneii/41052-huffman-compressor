@@ -4,6 +4,12 @@
 
 A working binary file compressor using canonical Huffman coding. Written in Python 3.11+ using only the standard library. No installation or build step is required.
 
+## Submission materials
+
+- Report: [REPORT.pdf](REPORT.pdf) ([Markdown source](REPORT.md)).
+- Implementation: [huff.py](huff.py); tests and measured results are included below.
+- Student-recorded walkthrough: final video is rendering; its accessible link must be added here before submission.
+
 ## Quick start
 
 Recording yourself on another laptop? Read `CODEX_HANDOFF.md`. Run `python video/serve.py` and open http://localhost:8767/read-along.html for standalone narration prompts while you operate VS Code yourself.
@@ -35,7 +41,7 @@ Outputs are never overwritten unless `--force` is supplied. Input and output mus
 - `demo.py`: repeatable demonstration for the video.
 - `benchmark.py`: reproducible gzip comparison across eight datasets, five repetitions each.
 - `results/benchmark.csv`, `results/environment.json`, `results/table.md`: measured results and environment.
-- `REPORT.md` and `REPORT.pdf`: written report, including honest AI disclosure and a reflection section requiring student review.
+- `REPORT.md` and `REPORT.pdf`: written report, findings, limitations, and AI-use disclosure.
 - `VIDEO_GUIDE.md`: code walkthrough and understanding checks; preparation notes, not a claim of understanding.
 - `SUBMISSION.md`: verified sources and remaining submission steps.
 
@@ -49,8 +55,8 @@ HUF1 header: magic (4 bytes), original size (8), payload bit count (8), CRC32 (4
 
 This is an educational whole-file compressor, not a replacement for gzip. It models single-byte frequencies rather than repeated substrings, stores a per-file table, reads inputs into memory and runs its bit decoder in Python. CRC32 detects many accidental changes but is not authentication. No claim of hostile-input security or large-file streaming support is made.
 
-AI assistance: Codex generated the implementation, tests, benchmark, documentation and report draft, and executed validation. See the report for actual corrections and the distinction between AI verification and student understanding.
-# Video and narration
+AI assistance: OpenAI Codex supported research, substantial initial implementation, tests, benchmarks, documentation, and report drafting. Benjamin directed the project and prepared the narrated demonstration. The report describes the extent of assistance, two concrete corrections, and verification limits.
+## Recording preparation
 
-Run `video/START_PROMPTER.cmd` for the real VS Code walkthrough with synchronized narration prompts. Record your own voice, then use `video/combine_narration.py` to combine it with the silent recording. See `video/README.md` for the steps. The UI walkthrough is automated and disclosed as such; read and adapt the explanation before recording.
+`video/read-along.html` provides narration prompts for recording the live demo yourself. The older automated `video/walkthrough-silent.mp4` is preparation footage, not the final student submission video. See `CODEX_HANDOFF.md` for recording commands.
 

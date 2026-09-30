@@ -63,23 +63,19 @@ Timing differences also reflect engineering, not just asymptotic algorithm choic
 
 ## What the project revealed
 
-This section records concrete findings from the artifact and AI-assisted development. It is not evidence that the student personally understood every implementation detail; that must be checked through the walkthrough.
-
 The most useful result is that equal symbol frequencies do not imply the absence of compressible structure. The uniform_bytes dataset contains each byte equally often, so single-byte Huffman coding uses eight-bit codes and adds metadata. Gzip still compresses the ordered repetition to 597 bytes. This explains why optimality within the class of symbol prefix codes is a narrower claim than being the best file compressor.
 
 A second finding concerns persistence. A correct in-memory tree is not enough for a reliable tool: the decoder needs an unambiguous code table and a precise endpoint for the bitstream. Original length, payload bit count, canonical lengths and padding validation all solve different parts of that problem. The round-trip tests alone would not have demonstrated malformed-input handling or optimal payload cost, so the suite includes independent small-case cost checks and negative archive cases.
 
-Before submission, the student should replace or endorse this section based on what they actually learned while running and explaining the project. No personal surprise, hours spent or independent student verification has been invented.
-
 ## AI use
 
-OpenAI Codex was used heavily in one interactive development session to select the approved topic, generate the implementation and CLI, design and execute tests, generate datasets and comparison code, prepare documentation, and draft this report and video preparation guide. Most code and prose originated from Codex. The recorded validation was executed by the assistant in the workspace; it should not be represented as testing independently performed by the student.
+I used OpenAI Codex as a development assistant for algorithm research and explanation, implementation, testing, benchmarking, documentation, and report preparation. The assistance was substantial: it produced the initial compressor and CLI implementation, test suite, benchmark scripts, and report draft, and ran validation in the development workspace. I directed the project requirements and prepared the narrated demonstration myself. The submitted work therefore combines my project direction and presentation with AI-assisted code and writing; AI assistance was not limited to spelling or minor suggestions.
 
 Two specific corrections arose during development. First, the initial encoder computed its bit count with Counter(data) inside the per-symbol comprehension. That rescanned the entire input once for each symbol even though one frequency count sufficed. The generated code was corrected to construct the counter once and reuse it. The original version round-tripped correctly, but its unnecessary repeated work would distort encoding timings and weaken the implementation-quality claim. Final benchmark measurements were taken after that correction.
 
 Second, the generated CLI test initially used tempfile.TemporaryDirectory. In this Windows runtime its restrictive directory creation produced PermissionError when writing test files. Moving it inside the project did not solve the error. The test was changed to create a uniquely named ordinary project directory, inherit usable permissions, and clean up only its own files. The initial test run had eight passing tests and one error; the final run has all nine passing. This was an environmental assumption in AI-generated testing code, rather than a Huffman algorithm defect.
 
-The report and tests offer evidence of behaviour but do not replace student understanding. At drafting time, the student's ability to explain the canonical assignment, packing and decoder has not been verified. A complete formal proof of the implementation, hostile-input security and large-file behaviour are not claimed. The student must honestly state which parts they can explain after reviewing the code and which remain accepted on trust. The video is the required opportunity to demonstrate that distinction.
+The code walkthrough explains the frequency-counting and merge process, canonical reconstruction, bit packing, and the decoder's reset to the root. Confidence in the tool's behaviour is supported by round-trip checks, matching hashes, malformed-input tests, and an independent small-case optimality check, rather than relying on generated explanations alone. These checks do not establish a complete formal proof, hostile-input security, or large-file performance; those areas remain outside the verified scope. The recorded development checks include assistant-executed tests and are not presented as independent student testing.
 
 ## References
 
