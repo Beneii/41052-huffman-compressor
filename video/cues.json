@@ -1,0 +1,48 @@
+[
+  {
+    "start": 0,
+    "end": 40,
+    "title": "A working file compressor",
+    "kind": "demo",
+    "text": "This is my Huffman coding project for Track B. It is a command line tool that compresses a file and restores the original bytes. Here is the original text, the file sizes, and the compressed archive. The original is five hundred and thirty bytes, and the archive is three hundred and sixty two bytes. The restored text is identical. These are actual results from running the tool. Both files have the same hash, and changing the checksum makes the decoder reject the archive. This screen walkthrough is automated; the explanation is my own recording."
+  },
+  {
+    "start": 40,
+    "end": 80,
+    "title": "Build the Huffman tree",
+    "kind": "code",
+    "function": "code_lengths",
+    "text": "The main algorithm starts here. First it counts how often each byte appears. Each byte becomes a leaf with that frequency as its weight. A priority queue lets the code take out the two smallest weights, merge them, and put their combined weight back. It repeats until there is one tree. The invariant is that these trees contain each symbol exactly once, and every weight is the total frequency underneath it. Creating the leaves establishes that invariant. Every merge preserves it."
+  },
+  {
+    "start": 80,
+    "end": 120,
+    "title": "Store lengths instead of the tree",
+    "kind": "code",
+    "function": "canonical_codes",
+    "text": "The depth of each leaf gives its code length. A frequent byte usually gets a shorter code. The tricky part is making the decoder reconstruct the same codes without storing the entire tree. This function sorts by code length and then by byte value. It shifts the current code when the length increases, assigns it, and increments. That is canonical Huffman coding. The archive only needs the symbol and its length. The checks here reject a table that asks for more codes than will fit."
+  },
+  {
+    "start": 120,
+    "end": 160,
+    "title": "Pack bits into real bytes",
+    "kind": "code",
+    "function": "compress",
+    "text": "Here the compressor turns those codes into bytes. It adds each code to an accumulator and keeps track of how many bits are waiting. Whenever at least eight bits are available, it writes a byte. The last byte might not be full, so it adds zero padding. This is why the header stores the exact number of meaningful bits, as well as the original file size. Otherwise the decoder could confuse padding with data. Empty files and files containing only one symbol are handled explicitly."
+  },
+  {
+    "start": 160,
+    "end": 200,
+    "title": "Decode and check the result",
+    "kind": "code",
+    "function": "decompress",
+    "text": "The decoder builds a tree from the canonical codes and follows one bit at a time. When it reaches a leaf, it writes that byte and goes back to the root. This reset is my what breaks example. If that line is removed, the next code starts below the previous leaf instead of at the root, so the next bits cannot be decoded correctly. At the end, the decoder checks the output length and checksum. There are nine passing tests, including malformed inputs and a separate small case optimality check."
+  },
+  {
+    "start": 200,
+    "end": 240,
+    "title": "Comparison and honest AI disclosure",
+    "kind": "results",
+    "text": "The comparison shows why this is not a replacement for gzip. Huffman coding looks at individual byte frequencies. Gzip can also exploit repeated sequences, so it does much better on repeated text. My tool does better on the skewed symbol example. Codex generated most of the code, tests and report draft. Two real corrections were avoiding repeated frequency counting, and fixing a Windows permission problem in the test setup. I am not claiming a formal proof or a security audit. The report describes the limits and the AI assistance."
+  }
+]

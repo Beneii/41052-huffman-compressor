@@ -3,3 +3,16 @@ demo-output/
 *.pyc
 tmp*/
 test-run-*/
+video/live-frames/
+video/capture-index.json
+video/capture.ffconcat
+video/real-*.mp4
+video/real-*.png
+video/vscode-*.mp4
+video/vscode-*.png
+video/demo-*.png
+video/code-*.png
+video/results-*.png
+video/create_walkthrough.py
+video/live_cli.ps1
+video/narration.webm

@@ -48,3 +48,7 @@ HUF1 header: magic (4 bytes), original size (8), payload bit count (8), CRC32 (4
 This is an educational whole-file compressor, not a replacement for gzip. It models single-byte frequencies rather than repeated substrings, stores a per-file table, reads inputs into memory and runs its bit decoder in Python. CRC32 detects many accidental changes but is not authentication. No claim of hostile-input security or large-file streaming support is made.
 
 AI assistance: Codex generated the implementation, tests, benchmark, documentation and report draft, and executed validation. See the report for actual corrections and the distinction between AI verification and student understanding.
+# Video and narration
+
+Run `video/START_PROMPTER.cmd` for the real VS Code walkthrough with synchronized narration prompts. Record your own voice, then use `video/combine_narration.py` to combine it with the silent recording. See `video/README.md` for the steps. The UI walkthrough is automated and disclosed as such; read and adapt the explanation before recording.
+
