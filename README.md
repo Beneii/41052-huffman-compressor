@@ -6,6 +6,8 @@ A working binary file compressor using canonical Huffman coding. Written in Pyth
 
 ## Quick start
 
+Recording yourself on another laptop? Read `CODEX_HANDOFF.md`. Run `python video/serve.py` and open http://localhost:8767/read-along.html for standalone narration prompts while you operate VS Code yourself.
+
 Open PowerShell in this folder:
 
 ```powershell

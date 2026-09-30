@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Huffman — read along while you record</title>
+<style>body{background:#111820;color:#edf3f8;font:20px system-ui;margin:24px;max-width:1000px}button,select{font:inherit;background:#273d4c;color:white;border:1px solid #7191a3;border-radius:7px;padding:10px;margin:5px}#words{font-size:30px;line-height:1.65;padding:20px;background:#1c2933;border-radius:12px}.current{background:#a9e9cb;color:#10241b}textarea{width:95%;min-height:160px;font:20px system-ui;background:#1c2933;color:white;padding:12px}p{color:#b7c8d5}#clock{font-variant-numeric:tabular-nums}</style>
+<h1>Read along while you record VS Code</h1>
+<p>This page only displays words. Record your screen and voice with your own recorder. Pause or advance whenever needed.</p>
+<button id="play">Start / pause</button><button id="back">Previous section</button><button id="next">Next section</button><button id="restart">Restart section</button>
+<select id="section" aria-label="Section"></select><select id="size" aria-label="Text size"><option value="30">Medium</option><option value="38">Large</option><option value="46">Extra large</option></select>
+<h2 id="title"></h2><p id="clock">0:00</p><div id="words"></div>
+<details><summary>Edit this section into your own words</summary><textarea id="edit" aria-label="Section wording"></textarea><button id="apply">Apply</button></details>
+<script>
+let cues=[],index=0,elapsed=0,running=false,last=performance.now(),spans=[];
+const $=s=>document.querySelector(s);
+function render(){if(!cues.length)return;$('#title').textContent=cues[index].title;$('#section').value=index;$('#edit').value=cues[index].text;$('#words').replaceChildren();spans=cues[index].text.split(/\s+/).map(word=>{const s=document.createElement('span');s.textContent=word+' ';$('#words').append(s);return s});update()}
+function update(){const position=Math.min(spans.length-1,Math.floor(elapsed/40*spans.length));spans.forEach((s,i)=>s.className=i===position?'current':'');$('#clock').textContent=Math.floor(elapsed/60)+':'+String(Math.floor(elapsed%60)).padStart(2,'0')+(running?' — running':' — paused')}
+function change(i){index=Math.max(0,Math.min(cues.length-1,i));elapsed=0;render()}
+$('#play').onclick=()=>{running=!running;last=performance.now();update()};$('#back').onclick=()=>change(index-1);$('#next').onclick=()=>change(index+1);$('#restart').onclick=()=>{elapsed=0;update()};$('#section').onchange=e=>change(Number(e.target.value));$('#size').onchange=e=>$('#words').style.fontSize=e.target.value+'px';$('#apply').onclick=()=>{cues[index].text=$('#edit').value.trim();render()};
+setInterval(()=>{const now=performance.now();if(running){elapsed+=(now-last)/1000;if(elapsed>=40){elapsed=40;running=false}update()}last=now},100);
+fetch('cues.json').then(r=>r.json()).then(data=>{cues=data;for(let i=0;i<cues.length;i++){const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+cues[i].title;$('#section').append(o)}render()}).catch(()=>$('#title').textContent='Start with python video/serve.py, then open localhost:8767/read-along.html');
+</script></html>

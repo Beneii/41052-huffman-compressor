@@ -16,3 +16,8 @@ video/results-*.png
 video/create_walkthrough.py
 video/live_cli.ps1
 video/narration.webm
+video/desktop-test.*
+video/native-test.png
+video/final-preview.png
+video/native_input.py
+video/walkthrough-native.mp4
