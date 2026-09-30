@@ -1,0 +1,9 @@
+{
+  "python": "3.11.15 (main, Mar 10 2026, 18:12:25) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "seed": 41052,
+  "repetitions": 5,
+  "timing": "median wall time; in-memory encode/decode; excludes disk I/O",
+  "gzip_level": 9,
+  "notes": "Python Huffman versus native zlib; speed reflects implementation language as well as algorithms."
+}

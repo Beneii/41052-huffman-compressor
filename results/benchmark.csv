@@ -1,0 +1,17 @@
+dataset,codec,input_bytes,archive_bytes,ratio,compress_ms,decompress_ms
+empty,Huffman,0,26,,0.005,0.003
+empty,gzip,0,20,,0.036,0.011
+tiny_text,Huffman,13,54,4.1538,0.025,0.022
+tiny_text,gzip,13,33,2.5385,0.037,0.008
+single_symbol,Huffman,65536,8220,0.1254,9.766,10.156
+single_symbol,gzip,65536,97,0.0015,0.23,0.169
+repeated_text,Huffman,65536,35754,0.5456,11.912,35.55
+repeated_text,gzip,65536,351,0.0054,0.388,0.141
+skewed_symbols,Huffman,65536,15373,0.2346,11.317,17.263
+skewed_symbols,gzip,65536,19155,0.2923,71.296,0.294
+uniform_bytes,Huffman,65536,66074,1.0082,10.971,59.87
+uniform_bytes,gzip,65536,597,0.0091,0.274,0.084
+random_bytes,Huffman,65536,66074,1.0082,11.191,56.17
+random_bytes,gzip,65536,65574,1.0006,1.131,0.074
+source_code,Huffman,8435,5172,0.6132,1.473,4.226
+source_code,gzip,8435,2889,0.3425,0.196,0.029
