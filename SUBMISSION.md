@@ -1,6 +1,9 @@
 # Submission status
 
-Prepared locally; not submitted. Student recording, report review, and an accessible repository link remain.
+Prepared locally and uploaded to a private GitHub repository; not submitted. Student recording, report review, and marker access remain.
+
+Repository: https://github.com/Beneii/41052-huffman-compressor
+This is private. Grant the marker access or explicitly choose to make it public before submitting its URL.
 
 ## Verified deadline and destination
 
